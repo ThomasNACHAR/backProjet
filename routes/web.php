@@ -1,11 +1,35 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ProductController::class, 'home']);
+
+
+Route::get('product/view', [ProductController::class, 'viewProduct']);
+Route::get('product/create', [ProductController::class, 'viewCreateProduct']);
+Route::post('/product/create', [ProductController::class, 'createProduct']);
+Route::get('product/update', [ProductController::class, 'viewUpdateForm']);
+
+
+// Route::get('', [ProfileController::class, 'updateProduct']);
+// Route::get('', [ProfileController::class, 'destroyProduct']);
+
+Route::get('/category/edit', [CategoryController::class, 'editCategory']);
+Route::get('/category/create', [CategoryController::class, 'create']);
+Route::post('/category/create', [CategoryController::class, 'createCategory']);
+Route::get('/category/update/{id}', [CategoryController::class, 'update']);
+Route::post('/category/update/{id}', [CategoryController::class, 'updateCategory']);
+Route::delete('/category/{id}', [CategoryController::class, 'destroyCategory']);
+
+Route::get('/cart', [CartController::class, 'index']);
+
+
+Route::get('/order', [OrderController::class, 'order']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
