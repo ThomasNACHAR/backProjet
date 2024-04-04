@@ -3,11 +3,20 @@
 @section('content')
 <main>
     <div>
+        <h1 class="flex justify-center py-4 font-bold text-2xl">Récapitulatif de la commande</h1>
     <article class="border border-gray-400 border-3 shadow-xl rounded-lg p-3 m-3 gap-4 flex flex-col w-1/3 ">
-          <div class="flex justify-between mx-4 mb-4 font-bold text-xl text-black">Numéro de commande : {{$order->id}}</div>
-          <div class="flex justify-between mx-4 mb-4 text-black">Status : {{$order->status}} </div>
-          <div class="flex justify-between mx-4 mb-4 text-black">Composition : {{$order->commande}}
+          <div class="flex justify-between mx-4 mb-4 font-bold text-xl text-black">Numéro de commande : {{$orders->id}}</div>
+          <div class="flex justify-between mx-4 mb-4 text-black">Status : {{$orders->status}} </div>
+          <div class="flex justify-between mx-4 mb-4 text-black">
+            Commande :
+            <div>
           
+            <ul>
+                <li>{{$orders->commande}}</li>
+            </ul>
+            
+          
+            </div>
           </div>
           
           

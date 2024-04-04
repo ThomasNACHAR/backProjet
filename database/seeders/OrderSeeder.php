@@ -18,7 +18,21 @@ class OrderSeeder extends Seeder
             'status' => 'En cours',
             'user_id' => '10',
             'cart_id' => '123',
-            'commande' => 'bougie iron man',
+            'commande' => 'bougie iron man'
+        ]);
+        Order::create([
+            
+            'status' => 'En cours',
+            'user_id' => '10',
+            'cart_id' => '121',
+            'commande' => 'bougie iron man'
+        ]);
+        Order::create([
+            
+            'status' => 'terminé',
+            'user_id' => '5',
+            'cart_id' => '100',
+            'commande' => 'bougie super'
         ]);
     }
 }

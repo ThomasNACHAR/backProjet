@@ -9,10 +9,13 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'date',
         'status',
         'user_id',
         'cart_id',
         'commmande'
     ];
+    public function commandes()
+    {
+        return $this->belongsTo(Cart::class);
+    }
 }
