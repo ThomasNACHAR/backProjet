@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(CategoriesSeeder::class);
+        $this->call(OrderSeeder::class);
     }
 }
