@@ -13,6 +13,7 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view("category/edit")->with("categories",$categories);
     }
+    // ajout de la methode
     public function create(){
         $categories = Category::all();
         return view("category/create")->with("categories",$categories);
