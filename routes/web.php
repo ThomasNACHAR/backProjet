@@ -23,7 +23,7 @@ Route::get('/category/edit', [CategoryController::class, 'editCategory']);
 Route::get('/category/create', [CategoryController::class, 'create']);
 Route::post('/category/create', [CategoryController::class, 'createCategory']);
 Route::get('/category/update/{id}', [CategoryController::class, 'update']);
-Route::post('/category/update/{id}', [CategoryController::class, 'updateCategory']);
+Route::put('/category/update/{id}', [CategoryController::class, 'updateCategory']);
 Route::delete('/category/{id}', [CategoryController::class, 'destroyCategory']);
 
 Route::get('/cart', [CartController::class, 'index']);

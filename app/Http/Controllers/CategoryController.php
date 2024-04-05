@@ -13,8 +13,10 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view("category/edit")->with("categories",$categories);
     }
+    // ajout de la methode
     public function create(){
-        return view("category/create");
+        $categories = Category::all();
+        return view("category/create")->with("categories",$categories);
     }
     public function createCategory(CategoryRequest $request)
     {
@@ -30,7 +32,7 @@ class CategoryController extends Controller
     }
     public function updateCategory(CategoryRequest $request, $id)
     {
-        $update = category::find($id);
+        $update = Category::find($id);
         $update->name = $request->input('name');
         $update->description = $request->input('description');
         $update->save();
