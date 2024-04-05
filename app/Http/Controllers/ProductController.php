@@ -48,7 +48,7 @@ class ProductController extends Controller
             $request->file('image')->move(public_path('images'),$imageName);
             $product->image = $imageName;
         } else {
-            $product->image = null; // ou la valeur par défaut que vous avez définie
+            $product->image = ""; // ou la valeur par défaut que vous avez définie
         }
     
         $product->stock = $request->input('stock');
