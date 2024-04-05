@@ -9,10 +9,13 @@ use App\Http\Requests\OrderRequest;
 class OrderController extends Controller
 {
     public function order($id){
-        $orders = Order::find($id);
+        $orders = Order::where('user_id', $id)->orderBy('id')->get();
         return view('order')->with('orders', $orders);
     }
     public function checkout(){
+
+       
+
         \Stripe\Stripe::setApiKey('sk_test_51P1nEhGek7YyB35dYAWQPndWl5PB8x0tqx1ENp4dy97A8SvOrqDlE7X9dC36BIdkcqANgZQsk1jJv7du5tkcH6JH00URG7xy5l');
 
         $URL = 'http://localhost:8000';

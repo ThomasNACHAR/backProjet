@@ -57,6 +57,6 @@
     </main>
 
     
-    <footer>&copy; </footer>
+    <footer class=" bottom-0 left-0 w-full bg-blue-900 text-white p-4 ">&copy; CCI18 Bourges</footer>
 </body>
 </html>
