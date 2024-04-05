@@ -30,7 +30,7 @@ class CategoryController extends Controller
     }
     public function updateCategory(CategoryRequest $request, $id)
     {
-        $update = category::find($id);
+        $update = Category::find($id);
         $update->name = $request->input('name');
         $update->description = $request->input('description');
         $update->save();
