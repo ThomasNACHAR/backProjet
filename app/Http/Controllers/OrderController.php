@@ -58,4 +58,10 @@ class OrderController extends Controller
         $delete->delete();
         return redirect("order");
     }
+    public function updateStatus($id,$request)
+    {
+        $updateStatus = Order::find($id);
+        $updateStatus->update(['status'=> $request->input('status')]);
+        return redirect("order");
+    }
 }
