@@ -41,17 +41,21 @@ class ProductController extends Controller
         $product = new Product;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
+        
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
             $request->file('image')->move(public_path('images'),$imageName);
             $product->image = $imageName;
+        } else {
+            $product->image = null; // ou la valeur par défaut que vous avez définie
         }
+    
         $product->stock = $request->input('stock');
         $product->description = $request->input('description');
         $product->category_id = $request->input('category');
         $product->save();
-        var_dump($product);
+        
         return redirect("product/view");
     }
 
