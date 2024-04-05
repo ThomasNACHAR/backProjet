@@ -14,14 +14,10 @@ Route::get('product/view', [ProductController::class, 'viewProduct']);
 Route::get('product/create', [ProductController::class, 'viewCreateProduct']);
 Route::post('product/create', [ProductController::class, 'createProduct']);
 Route::get('product/update/{id}', [ProductController::class, 'viewUpdateForm']);
-Route::put('update/{id}', [ProductController::class, 'updateProduct']);
+Route::put('/update/{id}', [ProductController::class, 'updateProduct']);
 Route::delete('delete/{id}', [ProductController::class, 'deleteProduct']);
 
 
-
-
-// Route::get('', [ProfileController::class, 'updateProduct']);
-// Route::get('', [ProfileController::class, 'destroyProduct']);
 
 Route::get('/category/edit', [CategoryController::class, 'editCategory']);
 Route::get('/category/create', [CategoryController::class, 'create']);
