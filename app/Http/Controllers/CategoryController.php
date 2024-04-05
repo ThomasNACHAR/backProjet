@@ -14,7 +14,8 @@ class CategoryController extends Controller
         return view("category/edit")->with("categories",$categories);
     }
     public function create(){
-        return view("category/create");
+        $categories = Category::all();
+        return view("category/create")->with("categories",$categories);
     }
     public function createCategory(CategoryRequest $request)
     {

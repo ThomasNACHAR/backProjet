@@ -21,11 +21,13 @@
                 </summary>
                 <div class="absolute left-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-blue-500 shadow-lg ring-1 ring-white ring-opacity-5 hover:bg-blue-600 focus:outline-none">
                 <ul class="list-none p-2 flex flex-col  justify-center">
-                <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="">Bougies</a></li>
-                <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="">Bijoux</a></li>
-                <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="">Papeterie</a></li>
+                    {{-- <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="/product/view">Tous les produits</a></li>    --}}
+                    @foreach ($categories as $category)
+                <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="">{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
                 </div>
+               
                 </details>
                 </li>
                 <li ><a class="w-full bg-blue-900 border border-transparent rounded-md shadow-sm py-4 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 " href="/personaliser">Personnaliser</a></li>
