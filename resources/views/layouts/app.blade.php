@@ -22,9 +22,9 @@
                 <div class="absolute left-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-blue-500 shadow-lg ring-1 ring-white ring-opacity-5 hover:bg-blue-600 focus:outline-none">
                 <ul class="list-none p-2 flex flex-col  justify-center">
                     {{-- <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="/product/view">Tous les produits</a></li>    --}}
-                    @foreach ($categories as $category)
+                    {{-- @foreach ($categories as $category)
                 <li><a class="block p-4 text-blue-900 hover:bg-blue-600 hover:text-white" href="">{{ $category->name }}</a></li>
-                    @endforeach
+                    @endforeach --}}
                 </ul>
                 </div>
                
