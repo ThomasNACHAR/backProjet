@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('title')
-Panier
+Panier de yoplait
 @endsection
 
 @section('content')
-    cart content
+    @dump('products')
 @endsection

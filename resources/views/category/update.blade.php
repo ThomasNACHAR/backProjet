@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<form method="post" action="{{url('/category/update/'.$category->id)}}">
+<form method="post" action="{{url('/update/'.$category->id)}}">
     @csrf
     <label for="name">Nom :</label>
     <input type="text" name="name" value="{{$category->name}}">

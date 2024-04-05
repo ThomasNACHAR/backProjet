@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
    @foreach ($products as $product)
-    Nom : {{$product->name}}   
+    
+    <a href="/product/update/{{$product->id}}"> Nom : {{$product->name}} </a>
    @endforeach 
-   @foreach ($categories as $category)
-     {{$category->id}}  
-   @endforeach
 <a href="/product/create">Créer un produit</a>
 @endsection

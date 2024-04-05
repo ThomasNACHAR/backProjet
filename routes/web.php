@@ -12,8 +12,12 @@ Route::get('/', [ProductController::class, 'home']);
 
 Route::get('product/view', [ProductController::class, 'viewProduct']);
 Route::get('product/create', [ProductController::class, 'viewCreateProduct']);
-Route::post('/product/create', [ProductController::class, 'createProduct']);
-Route::get('product/update', [ProductController::class, 'viewUpdateForm']);
+Route::post('product/create', [ProductController::class, 'createProduct']);
+Route::get('product/update/{id}', [ProductController::class, 'viewUpdateForm']);
+Route::put('update/{id}', [ProductController::class, 'updateProduct']);
+Route::delete('delete/{id}', [ProductController::class, 'deleteProduct']);
+
+
 
 
 // Route::get('', [ProfileController::class, 'updateProduct']);
