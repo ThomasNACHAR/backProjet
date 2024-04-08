@@ -8,7 +8,7 @@
         <div class="container border p-4">
             <p class="font-bold">{{$product->name}}</p>
             <p class="mb-2">Prix : {{$product->price}}</p>
-            <img src="/images/{{$product->image}}" alt="{{$product->name}}" class="mb-2">
+            <img src="/images/{{$product->image}}" class="mb-2">
             <a href="/product/update/{{$product->id}}" class="text-blue-500 hover:text-blue-700">Modifier</a>
         </div>
         @endforeach

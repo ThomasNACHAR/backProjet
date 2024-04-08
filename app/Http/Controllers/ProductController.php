@@ -37,11 +37,10 @@ class ProductController extends Controller
     }
 
     //Fonction pour ajouter un nouveau produit
-    public function createProduct(ProductRequest $request){
+    public function createProduct(ProductRequest $request) {
         $product = new Product;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
@@ -50,14 +49,19 @@ class ProductController extends Controller
         } else {
             $product->image = ""; // ou la valeur par défaut que vous avez définie
         }
-    
         $product->stock = $request->input('stock');
         $product->description = $request->input('description');
         $product->category_id = $request->input('category');
+        if ($request->hasFile('imageCreate')) {
+            $image = $request->file('imageCreate');
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('imageCreate'), $imageName); // Déplacer l'image vers le répertoire public/images
+            $product->image = $imageName;
+        }
         $product->save();
-        
         return redirect("product/view");
     }
+    
 
     //Fonction pour modifier un produit
     public function updateProduct(ProductRequest $request, $id){

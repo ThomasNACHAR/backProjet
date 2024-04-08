@@ -62,7 +62,7 @@
             {{-- Champ catégories --}}
             <div class="mb-4">
                 <label for="category" class="block mb-2">Catégorie :</label>
-                <select name="category" class="border rounded-md px-3 py-2 w-full">
+                <select name="category" class="border rounded-md px-3 py-2 w-full" required>
                     <option value="">Sélectionnez une catégorie</option>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
