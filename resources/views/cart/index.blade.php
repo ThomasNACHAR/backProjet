@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Panier de yoplait
+Panier
 @endsection
 
 @section('content')
