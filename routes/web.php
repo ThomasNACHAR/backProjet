@@ -32,6 +32,7 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::get('/order/{id}', [OrderController::class, 'order']);
 Route::post('/order/checkout', [OrderController::class, 'checkout']);
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
