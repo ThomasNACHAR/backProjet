@@ -22,7 +22,7 @@ class Item extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'quantity' => 'required|numeric|unsigned',
         ];
     }
 }
