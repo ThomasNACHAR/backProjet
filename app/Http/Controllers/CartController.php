@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function index(){
-        $carts = Cart::all();
-        return view('cart/index')->with(["carts" => $carts]);
-    }
+        $cart = Cart::where('user_id', auth()->id())->with('items.product')->first();
+        return view('cart.index', compact('cart'));
+        }
     public function create()
     {
         //
